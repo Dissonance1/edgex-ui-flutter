@@ -10,12 +10,15 @@ import '../models/app_service.dart';
 import '../models/subscription.dart';
 
 class EdgeXService {
-  static const String _metadataUrl = 'http://localhost:59881/api/v3';
-  static const String _dataUrl = 'http://localhost:59880/api/v3';
-  static const String _commandUrl = 'http://localhost:59882/api/v3';
-  static const String _schedulerUrl = 'http://localhost:59861/api/v3';
-  static const String _notificationUrl = 'http://localhost:59860/api/v3';
-  static const String _kuiperUrl = 'http://localhost:9081';
+  // Change this to the IP of the machine running EdgeX services
+  static const String _host = 'localhost'; 
+
+  static const String _metadataUrl = 'http://$_host:59881/api/v3';
+  static const String _dataUrl = 'http://$_host:59880/api/v3';
+  static const String _commandUrl = 'http://$_host:59882/api/v3';
+  static const String _schedulerUrl = 'http://$_host:59861/api/v3';
+  static const String _notificationUrl = 'http://$_host:59860/api/v3';
+  static const String _kuiperUrl = 'http://$_host:9081';
 
   // ==================== DEVICES ====================
   Future<List<Device>> fetchDevices() async {
